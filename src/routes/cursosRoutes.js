@@ -3,11 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 
-const{ index, test, formulario} = require("../controllers/cursosController");
+const{ altaCurso } = require("../controllers/cursosController");
  
 
-router.get("/", index);
-router.get("/test", test);
-router.post("/formulario", formulario);
+router.post("/curso/nuevo", altaCurso);
+ 
 
 module.exports = router;

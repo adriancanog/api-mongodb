@@ -3,13 +3,13 @@ const { Schema, model } = require("mongoose");
 const CursosSchema = new Schema(
   {
     nombre: {
-      type: string,
+      type: String,
     },
     duracion: {
-      type: string,
+      type: String,
     },
     precio: {
-      type: string,
+      type: String,
     },
   },
   {

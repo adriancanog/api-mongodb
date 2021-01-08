@@ -1,19 +1,18 @@
 const cursosCtrl = {};
 
-cursosCtrl.index = (req, res) => {
+const Curso = require("../models/cursosModel");
 
-res.json("hola llegué al controller");
+cursosCtrl.altaCurso = async(req, res) => {
+const{nombre, duracion, precio} = req.body;
+
+const nuevoCurso = new Curso({nombre, duracion, precio});
+await nuevoCurso.save();
+
+res.json(
+    nuevoCurso
+)
+
+
 }
 
-
-cursosCtrl.test = (req, res) =>{
-    res.json("hola soy otra ruta");
-}
-
-cursosCtrl.formulario = (req, res) =>{
-
-    let hola = req.body;
-    res.json(hola)
-   
-}
 module.exports = cursosCtrl;
